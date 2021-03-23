@@ -13,6 +13,10 @@ struct ApplicationInfo: Decodable {
 	let storeId: String
 }
 
+extension ApplicationInfo: Identifiable {
+	var id: String { storeId }
+}
+
 extension ApplicationInfo {
 	static let examples: [ApplicationInfo] = {
 		guard let url = Bundle(for: KernelClient.self).url(forResource: "AppList", withExtension: "json") else {

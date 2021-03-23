@@ -26,7 +26,7 @@ class KernelClient: ObservableObject {
 	private var bag: Set<AnyCancellable> = []
 	
 	init(all: State = .undefined, featured: State = .undefined) {
-		guard let url = URL(string: "http://kernel-directory.heroku.com") else {
+		guard let url = URL(string: "https://kernel-directory.heroku.com") else {
 			preconditionFailure("Couldn't create URL")
 		}
 		self.client = RESTClient(baseUrl: url)

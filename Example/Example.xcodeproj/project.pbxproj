@@ -72,9 +72,9 @@
 		C8FCA046260AA75700EF9147 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				C8FCA072260AA80700EF9147 /* Sources */,
 				C8FCA047260AA75700EF9147 /* ExampleApp.swift */,
 				C8FCA049260AA75700EF9147 /* ContentView.swift */,
+				C8FCA072260AA80700EF9147 /* Sources */,
 				C8FCA04B260AA75800EF9147 /* Assets.xcassets */,
 				C8FCA050260AA75800EF9147 /* Info.plist */,
 				C8FCA04D260AA75800EF9147 /* Preview Content */,
