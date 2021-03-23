@@ -15,7 +15,7 @@ struct ApplicationInfo: Decodable {
 
 extension ApplicationInfo {
 	static let examples: [ApplicationInfo] = {
-		guard let url = Bundle.module.url(forResource: "AppList", withExtension: "json") else {
+		guard let url = Bundle(for: KernelClient.self).url(forResource: "AppList", withExtension: "json") else {
 			preconditionFailure("File not found")
 		}
 		do {

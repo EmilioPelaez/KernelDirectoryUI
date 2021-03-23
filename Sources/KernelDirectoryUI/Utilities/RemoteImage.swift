@@ -7,7 +7,7 @@ import SwiftUI
 
 struct RemoteImage<Placeholder: View>: View {
 	
-	let loader = ImageLoader()
+	@ObservedObject var loader = ImageLoader()
 	let url: URL
 	let placeholder: Placeholder
 	
@@ -19,9 +19,12 @@ struct RemoteImage<Placeholder: View>: View {
 	var body: some View {
 		Group {
 			if let image = loader.state.image {
-				image.resizable()
+				image
+					.resizable()
+					.transition(.opacity)
 			} else {
 				placeholder
+					.transition(.opacity)
 			}
 		}
 		.onAppear { loader.download(url: url) }

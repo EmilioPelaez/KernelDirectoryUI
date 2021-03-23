@@ -45,13 +45,16 @@ class ImageLoader: ObservableObject {
 			.map(\.data)
 			.map(UIImage.init)
 			.mapError { $0 as Error }
+			.receive(on: RunLoop.main)
 			.result(handler: handle)
 			.store(in: &bag)
 	}
 	
 	private func handle(_ result: Result<UIImage?, Error>) {
 		if let image = try? result.get() {
-			state = .loaded(Image(uiImage: image))
+			withAnimation {
+				state = .loaded(Image(uiImage: image))
+			}
 		} else {
 			state = .error
 		}
