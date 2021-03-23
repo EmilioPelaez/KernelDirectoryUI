@@ -22,8 +22,9 @@ struct DirectoryFeaturedView: View {
 			switch client.featured {
 			case .loaded(let apps):
 				VStack(alignment: .leading) {
-					ForEach(apps) {
-						DirectoryRow(app: $0)
+					ForEach(apps) { app in
+						DirectoryRow(app: app)
+							.onTapGesture { openApp(app) }
 					}
 					Button(action: viewAllAction) {
 						Text("View All")
@@ -33,7 +34,7 @@ struct DirectoryFeaturedView: View {
 				emptyView(client.featured)
 			}
 		}
-		.frame(minWidth: 300, maxWidth: 450, alignment: .top)
+		.frame(maxWidth: 450)
 		.onAppear { client.fetchFeatured() }
 	}
 	
@@ -60,6 +61,12 @@ struct DirectoryFeaturedView: View {
 		.padding()
 		.frame(minHeight: 100, alignment: .center)
 	}
+	
+	func openApp(_ app: ApplicationInfo) {
+		guard let url = URL(string: "https://apps.apple.com/app/" + app.id) else { return }
+		UIApplication.shared.open(url)
+	}
+	
 }
 
 struct DirectoryFeaturedView_Previews: PreviewProvider {

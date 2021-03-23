@@ -13,7 +13,7 @@ struct DirectoryRow: View {
 	
 	var body: some View {
 		HStack(alignment: .top) {
-			RemoteImage(url: app.icon, placeholder: Color.blue)
+			RemoteImage(url: app.icon, placeholder: Color(.tertiarySystemBackground))
 				.aspectRatio(contentMode: .fill)
 				.frame(width: 60, height: 60)
 				.clipped()
@@ -41,7 +41,7 @@ struct DirectoryRow: View {
 		.padding(8)
 		.background(
 			RoundedRectangle(cornerRadius: 8, style: .continuous)
-									.foregroundColor(Color(.secondarySystemBackground)), alignment: .center
+									.foregroundColor(Color(.secondarySystemBackground))
 		)
 		
 	}
