@@ -12,3 +12,21 @@ struct ApplicationInfo: Decodable {
 	let creator: String
 	let storeId: String
 }
+
+extension ApplicationInfo {
+	static let examples: [ApplicationInfo] = {
+		guard let url = Bundle.module.url(forResource: "AppList", withExtension: "json") else {
+			preconditionFailure("File not found")
+		}
+		do {
+			let data = try Data(contentsOf: url)
+			let decoder = JSONDecoder()
+			let list = try decoder.decode([ApplicationInfo].self, from: data)
+			return list
+		} catch {
+			preconditionFailure("Unable to load \(error.localizedDescription)")
+		}
+	}()
+	
+	static var example: ApplicationInfo { examples[0] }
+}

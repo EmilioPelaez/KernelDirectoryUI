@@ -3,6 +3,8 @@
 //  Created by Emilio Peláez on 22/3/21.
 //
 
+#if canImport(UIKit)
+
 import SwiftUI
 
 struct DirectoryFeaturedView: View {
@@ -41,7 +43,7 @@ struct DirectoryFeaturedView: View {
 	}
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct DirectoryFeaturedView_Previews: PreviewProvider {
 	static var previews: some View {
 		DirectoryFeaturedView(client: KernelClient(featured: .undefined))
 		
@@ -52,3 +54,5 @@ struct SwiftUIView_Previews: PreviewProvider {
 		DirectoryFeaturedView(client: KernelClient(featured: .loaded(featured: [])))
 	}
 }
+
+#endif

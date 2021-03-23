@@ -19,9 +19,15 @@ let package = Package(
 	targets: [
 		.target(
 			name: "KernelDirectoryUI",
-			dependencies: ["RESTClient"]),
+			dependencies: ["RESTClient"],
+			resources: [
+				.process("TestData"),
+			]),
 		.testTarget(
 			name: "KernelDirectoryUITests",
-			dependencies: ["KernelDirectoryUI"]),
+			dependencies: ["KernelDirectoryUI"],
+			resources: [
+				.process("TestData"),
+			]),
 	]
 )
