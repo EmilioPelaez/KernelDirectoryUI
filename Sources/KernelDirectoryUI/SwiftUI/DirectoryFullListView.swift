@@ -49,6 +49,7 @@ struct DirectoryFullListView: View {
 		.padding()
 		.onAppear {
 			client.fetchAll()
+			listState = client.all
 		}
 		.onChange(of: client.all) { all in
 			withAnimation { listState = all }

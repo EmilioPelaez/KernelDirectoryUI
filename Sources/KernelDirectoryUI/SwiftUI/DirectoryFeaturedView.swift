@@ -36,7 +36,10 @@ struct DirectoryFeaturedView: View {
 			}
 		}
 		.frame(maxWidth: 450)
-		.onAppear { client.fetchFeatured() }
+		.onAppear {
+			client.fetchFeatured()
+			featuredState = client.featured
+		}
 		.onChange(of: client.featured) { featured in
 			withAnimation { featuredState = featured }
 		}
