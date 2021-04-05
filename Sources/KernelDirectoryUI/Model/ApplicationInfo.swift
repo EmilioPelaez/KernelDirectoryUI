@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import RESTClient
 
 struct ApplicationInfo: Decodable {
 	let icon: URL
@@ -18,6 +19,10 @@ extension ApplicationInfo: Identifiable {
 }
 
 extension ApplicationInfo: Equatable {}
+
+extension ApplicationInfo: RemoteResource {
+	static var path: String { "applications" }
+}
 
 extension ApplicationInfo {
 	static let examples: [ApplicationInfo] = {

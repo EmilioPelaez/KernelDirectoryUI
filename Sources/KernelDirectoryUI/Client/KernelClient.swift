@@ -9,26 +9,38 @@ import RESTClient
 
 class KernelClient: ObservableObject {
 	
-	enum State {
+	enum FeaturedState {
 		case undefined
 		case loading
 		case failed
-		case loaded(featured: [ApplicationInfo])
+		case loaded([ApplicationInfo])
 	}
 	
-	private let client: RESTClient
+	enum AllState {
+		enum LoadingState {
+			case loading
+			case loaded
+			case loadedAll
+		}
+		
+		case undefined
+		case failed([ApplicationInfo], Page)
+		case list([ApplicationInfo], Page, LoadingState)
+	}
+	
+	private let client: PaginatedClient<Page>
 	private let featuredRouter = KernelRouter(route: .featured)
 	
-	@Published var all: State
-	@Published var featured: State
+	@Published var all: AllState
+	@Published var featured: FeaturedState
 	
 	private var bag: Set<AnyCancellable> = []
 	
-	init(all: State = .undefined, featured: State = .undefined) {
+	init(all: AllState = .undefined, featured: FeaturedState = .undefined) {
 		guard let url = URL(string: "https://api.kernelproject.com") else {
 			preconditionFailure("Couldn't create URL")
 		}
-		self.client = RESTClient(baseUrl: url)
+		self.client = PaginatedClient(baseUrl: url, pageSizeKey: "size")
 		self.all = all
 		self.featured = featured
 	}
@@ -42,7 +54,7 @@ class KernelClient: ObservableObject {
 				.receive(on: RunLoop.main)
 				.result { [self] result in
 					do {
-						featured = .loaded(featured: try result.get())
+						featured = .loaded(try result.get())
 					} catch {
 						featured = .failed
 					}
@@ -55,27 +67,41 @@ class KernelClient: ObservableObject {
 	
 	func fetchAll() {
 		switch all {
-		case .undefined, .failed:
-			featured = .loading
-			client
-				.all(ApplicationInfo.self)
-				.receive(on: RunLoop.main)
-				.result { [self] result in
-					do {
-						all = .loaded(featured: try result.get())
-					} catch {
-						all = .failed
-					}
-				}
-				.store(in: &bag)
-		case .loaded: break
-		case .loading: break
+		case .undefined:
+			fetchMore()
+		case let .failed(results, page):
+			fetchMore(results: results, page: page)
+		case .list(let results, let page, .loaded):
+			fetchMore(results: results, page: page)
+		case _: break
 		}
+	}
+	
+	let pageSize = 1
+	private func fetchMore(results: [ApplicationInfo] = [], page: Page? = nil) {
+		let page = page ?? Page(page: -1, size: 0, total: 0)
+		all = .list(results, page, .loading)
+		client.page(ApplicationInfo.self, page: page.page + 1, pageSize: pageSize)
+			.receive(on: RunLoop.main)
+			.result { [self] result in
+				do {
+					let response = try result.get()
+					let newResults = results + response.results
+					if newResults.count < response.page.total {
+						all = .list(newResults, response.page, .loaded)
+					} else {
+						all = .list(newResults, response.page, .loadedAll)
+					}
+				} catch {
+					all = .failed(results, page)
+				}
+			}
+			.store(in: &bag)
 	}
 	
 }
 
-extension KernelClient.State: CustomStringConvertible {
+extension KernelClient.FeaturedState: CustomStringConvertible {
 	var description: String {
 		switch self {
 		case .undefined: return "Undefined"
@@ -86,13 +112,27 @@ extension KernelClient.State: CustomStringConvertible {
 	}
 }
 
-extension KernelClient.State: Equatable {
-	static func == (lhs: KernelClient.State, rhs: KernelClient.State) -> Bool {
+extension KernelClient.FeaturedState: Equatable {
+	static func == (lhs: KernelClient.FeaturedState, rhs: KernelClient.FeaturedState) -> Bool {
 		switch (lhs, rhs) {
 		case (.undefined, .undefined): return true
 		case (.loading, .loading): return true
 		case (.failed, .failed): return true
 		case let (.loaded(lhsData), .loaded(rhsData)): return lhsData == rhsData
+		case _: return false
+		}
+	}
+}
+
+extension KernelClient.AllState: Equatable {
+	static func == (lhs: KernelClient.AllState, rhs: KernelClient.AllState) -> Bool {
+		switch (lhs, rhs) {
+		case (.undefined, .undefined):
+			return true
+		case let (.failed(lhsResults, lhsPage), .failed(rhsResults, rhsPage)):
+			return lhsResults == rhsResults && lhsPage == rhsPage
+		case let (.list(lhsResults, lhsPage, lhsState), .list(rhsResults, rhsPage, rhsState)):
+			return lhsResults == rhsResults && lhsPage == rhsPage && lhsState == rhsState
 		case _: return false
 		}
 	}

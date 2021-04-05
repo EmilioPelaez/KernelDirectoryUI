@@ -14,7 +14,7 @@ let package = Package(
 			targets: ["KernelDirectoryUI"]),
 	],
 	dependencies: [
-		.package(url: "https://github.com/EmilioPelaez/RESTClient", "0.9.0"..<"1.0.0")
+		.package(url: "https://github.com/EmilioPelaez/RESTClient", "0.9.1"..<"1.0.0")
 	],
 	targets: [
 		.target(

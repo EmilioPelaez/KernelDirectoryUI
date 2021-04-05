@@ -10,7 +10,7 @@ import SwiftUI
 struct DirectoryFeaturedView: View {
 	
 	@ObservedObject var client: KernelClient
-	@State var featuredState: KernelClient.State = .undefined
+	@State var featuredState: KernelClient.FeaturedState = .undefined
 	let viewAllAction: () -> Void
 	
 	var body: some View {
@@ -42,7 +42,7 @@ struct DirectoryFeaturedView: View {
 		}
 	}
 	
-	func emptyView(_ state: KernelClient.State) -> some View {
+	func emptyView(_ state: KernelClient.FeaturedState) -> some View {
 		Group {
 			switch state {
 			case .undefined:
@@ -81,7 +81,7 @@ struct DirectoryFeaturedView_Previews: PreviewProvider {
 		
 		DirectoryFeaturedView(client: KernelClient(featured: .loading)) { }
 		
-		DirectoryFeaturedView(client: KernelClient(featured: .loaded(featured: []))) { }
+		DirectoryFeaturedView(client: KernelClient(featured: .loaded([]))) { }
 	}
 }
 

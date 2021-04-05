@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+	@State var showFullList = false
+	
 	var body: some View {
-		DirectoryFeaturedView(client: .init()) { }
+		DirectoryFeaturedView(client: .init()) { showFullList = true }
 			.padding()
+			.sheet(isPresented: $showFullList) {
+				DirectoryFullListView(client: .init())
+			}
 	}
 }
 
