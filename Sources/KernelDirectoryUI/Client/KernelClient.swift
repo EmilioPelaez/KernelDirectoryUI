@@ -17,7 +17,6 @@ class KernelClient: ObservableObject {
 	}
 	
 	private let client: RESTClient
-	private let allRouter = KernelRouter(route: .all)
 	private let featuredRouter = KernelRouter(route: .featured)
 	
 	@Published var all: State
@@ -26,7 +25,7 @@ class KernelClient: ObservableObject {
 	private var bag: Set<AnyCancellable> = []
 	
 	init(all: State = .undefined, featured: State = .undefined) {
-		guard let url = URL(string: "https://kernel-directory.heroku.com") else {
+		guard let url = URL(string: "https://api.kernelproject.com") else {
 			preconditionFailure("Couldn't create URL")
 		}
 		self.client = RESTClient(baseUrl: url)
@@ -59,7 +58,7 @@ class KernelClient: ObservableObject {
 		case .undefined, .failed:
 			featured = .loading
 			client
-				.all(ApplicationInfo.self, router: allRouter)
+				.all(ApplicationInfo.self)
 				.receive(on: RunLoop.main)
 				.result { [self] result in
 					do {

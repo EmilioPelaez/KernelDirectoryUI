@@ -10,8 +10,7 @@ import RESTClient
 
 struct KernelRouter: Router {
 	enum Route: String {
-		case all
-		case featured
+		case featured = "applications/featured"
 	}
 	
 	let route: Route
