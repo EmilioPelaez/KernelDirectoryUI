@@ -22,6 +22,8 @@ struct DirectoryRow: View {
 				HStack {
 					VStack(alignment: .leading) {
 						Text(app.name)
+							.foregroundColor(.primary)
+							.font(.headline)
 						Text(app.subtitle)
 							.foregroundColor(.secondary)
 							.font(.callout)
