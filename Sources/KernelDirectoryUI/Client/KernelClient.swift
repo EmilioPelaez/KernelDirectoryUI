@@ -85,3 +85,15 @@ extension KernelClient.State: CustomStringConvertible {
 		}
 	}
 }
+
+extension KernelClient.State: Equatable {
+	static func == (lhs: KernelClient.State, rhs: KernelClient.State) -> Bool {
+		switch (lhs, rhs) {
+		case (.undefined, .undefined): return true
+		case (.loading, .loading): return true
+		case (.failed, .failed): return true
+		case let (.loaded(lhsData), .loaded(rhsData)): return lhsData == rhsData
+		case _: return false
+		}
+	}
+}

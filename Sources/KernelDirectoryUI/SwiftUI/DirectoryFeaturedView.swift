@@ -10,6 +10,7 @@ import SwiftUI
 struct DirectoryFeaturedView: View {
 	
 	@ObservedObject var client: KernelClient
+	@State var featuredState: KernelClient.State = .undefined
 	let viewAllAction: () -> Void
 	
 	var body: some View {
@@ -19,7 +20,7 @@ struct DirectoryFeaturedView: View {
 				Spacer()
 			}
 			.font(.headline)
-			switch client.featured {
+			switch featuredState {
 			case .loaded(let apps):
 				VStack(alignment: .leading) {
 					ForEach(apps) { app in
@@ -31,11 +32,14 @@ struct DirectoryFeaturedView: View {
 					}
 				}
 			case _:
-				emptyView(client.featured)
+				emptyView(featuredState)
 			}
 		}
 		.frame(maxWidth: 450)
 		.onAppear { client.fetchFeatured() }
+		.onChange(of: client.featured) { featured in
+			withAnimation { featuredState = featured }
+		}
 	}
 	
 	func emptyView(_ state: KernelClient.State) -> some View {
@@ -63,7 +67,7 @@ struct DirectoryFeaturedView: View {
 	}
 	
 	func openApp(_ app: ApplicationInfo) {
-		guard let url = URL(string: "https://apps.apple.com/app/" + app.id) else { return }
+		guard let url = URL(string: "https://apps.apple.com/app/id" + app.id) else { return }
 		UIApplication.shared.open(url)
 	}
 	
