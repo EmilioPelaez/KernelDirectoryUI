@@ -28,14 +28,13 @@ struct DirectoryFeaturedView: View {
 							.onTapGesture { openApp(app) }
 					}
 					Button(action: viewAllAction) {
-						Text("View All")
+						Text("More Apps")
 					}
 				}
 			case _:
 				emptyView(featuredState)
 			}
 		}
-		.frame(maxWidth: 450)
 		.onAppear {
 			client.fetchFeatured()
 			featuredState = client.featured

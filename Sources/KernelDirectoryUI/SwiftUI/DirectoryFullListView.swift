@@ -30,6 +30,15 @@ struct DirectoryFullListView: View {
 				}
 			case .list(let results, _, let state):
 				VStack {
+					Text("These apps are free to download, contain no ads and don't have any functionality restricted by In-App Purchases. They're totally free to use!")
+						.lineLimit(nil)
+						.font(.callout)
+						.multilineTextAlignment(.leading)
+						.foregroundColor(Color(.secondaryLabel))
+						.frame(maxWidth: .infinity, alignment: .leading)
+						.padding()
+						.background(Color(.secondarySystemBackground))
+						.mask(RoundedRectangle(cornerRadius: 6, style: .continuous))
 					LazyVStack {
 						ForEach(results) { app in
 							DirectoryRow(app: app)
@@ -47,6 +56,7 @@ struct DirectoryFullListView: View {
 			}
 		}
 		.padding()
+		.navigationTitle("More Apps")
 		.onAppear {
 			client.fetchAll()
 			listState = client.all

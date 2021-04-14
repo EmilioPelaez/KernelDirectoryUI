@@ -15,7 +15,7 @@ struct ContentView: View {
 		DirectoryFeaturedView(client: client) { showFullList = true }
 			.padding()
 			.sheet(isPresented: $showFullList) {
-				DirectoryFullListView(client: client)
+				DirectoryModalView(client: client)
 			}
 	}
 }
