@@ -15,7 +15,7 @@ struct DirectoryModalView: View {
 	
 	var body: some View {
 		NavigationView {
-			DirectoryFullListView(client: client)
+			DirectoryListView(client: client)
 				.navigationBarItems(leading: closeButton)
 		}
 	}

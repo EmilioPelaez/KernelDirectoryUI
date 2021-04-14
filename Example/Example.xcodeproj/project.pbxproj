@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C8CD6007261BB17800B3B9BE /* DirectoryFullListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CD6006261BB17800B3B9BE /* DirectoryFullListView.swift */; };
+		C8CD6007261BB17800B3B9BE /* DirectoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CD6006261BB17800B3B9BE /* DirectoryListView.swift */; };
 		C8CD600D261BC13600B3B9BE /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CD600C261BC13600B3B9BE /* Page.swift */; };
 		C8E1F1C426277802008F9ABC /* DirectoryModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1C326277802008F9ABC /* DirectoryModalView.swift */; };
 		C8FCA048260AA75700EF9147 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA047260AA75700EF9147 /* ExampleApp.swift */; };
@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C8CD6006261BB17800B3B9BE /* DirectoryFullListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryFullListView.swift; sourceTree = "<group>"; };
+		C8CD6006261BB17800B3B9BE /* DirectoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryListView.swift; sourceTree = "<group>"; };
 		C8CD600C261BC13600B3B9BE /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		C8E1F1C326277802008F9ABC /* DirectoryModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryModalView.swift; sourceTree = "<group>"; };
 		C8FCA044260AA75700EF9147 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				C8FCA080260AA81900EF9147 /* DirectoryFeaturedView.swift */,
-				C8CD6006261BB17800B3B9BE /* DirectoryFullListView.swift */,
+				C8CD6006261BB17800B3B9BE /* DirectoryListView.swift */,
 				C8FCA081260AA81900EF9147 /* DirectoryRow.swift */,
 				C8E1F1C326277802008F9ABC /* DirectoryModalView.swift */,
 			);
@@ -242,7 +242,7 @@
 			files = (
 				C8FCA083260AA81900EF9147 /* Publisher.swift in Sources */,
 				C8FCA04A260AA75700EF9147 /* ContentView.swift in Sources */,
-				C8CD6007261BB17800B3B9BE /* DirectoryFullListView.swift in Sources */,
+				C8CD6007261BB17800B3B9BE /* DirectoryListView.swift in Sources */,
 				C8FCA089260AA81900EF9147 /* DirectoryFeaturedView.swift in Sources */,
 				C8FCA086260AA81900EF9147 /* ApplicationInfo.swift in Sources */,
 				C8FCA08A260AA81900EF9147 /* DirectoryRow.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  DirectoryFullListView.swift
+//  DirectoryListView.swift
 //  Example
 //
 //  Created by Emilio Peláez on 5/4/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DirectoryFullListView: View {
+struct DirectoryListView: View {
 	
 	@ObservedObject var client: KernelClient
 	@State var listState: KernelClient.AllState = .undefined
@@ -72,8 +72,8 @@ struct DirectoryFullListView: View {
 	}
 }
 
-struct DirectoryFullListView_Previews: PreviewProvider {
+struct DirectoryListView_Previews: PreviewProvider {
 	static var previews: some View {
-		DirectoryFullListView(client: KernelClient(all: .undefined))
+		DirectoryListView(client: KernelClient(all: .undefined))
 	}
 }
