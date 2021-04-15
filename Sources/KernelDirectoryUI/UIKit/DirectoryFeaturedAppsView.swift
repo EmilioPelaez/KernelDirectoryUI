@@ -17,7 +17,7 @@ public class DirectoryFeaturedAppsView: UIView {
 	var bag: Set<AnyCancellable> = []
 	
 	lazy var contentView: DirectoryFeaturedContentView? = {
-		let nib = Bundle(for: DirectoryFeaturedContentView.self).loadNibNamed("DirectoryFeaturedContentView", owner: nil, options: nil)
+		let nib = Bundle.module.loadNibNamed("DirectoryFeaturedContentView", owner: nil, options: nil)
 		return nib?[0] as? DirectoryFeaturedContentView
 	}()
 	
