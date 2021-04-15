@@ -9,8 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
 	
+	let client = KernelClient()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+	}
+	
+	@IBAction func pushAction() {
+		let listController = DirectoryListViewController(client: client)
+		self.navigationController?.pushViewController(listController, animated: true)
+	}
+	
+	@IBAction func presentAction() {
+		
 	}
 	
 }

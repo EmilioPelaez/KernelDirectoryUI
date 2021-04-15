@@ -25,10 +25,24 @@
 		C8E1F20B26281DDA008F9ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F20826281DDA008F9ABC /* SceneDelegate.swift */; };
 		C8E1F20C26281DDA008F9ABC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F20926281DDA008F9ABC /* ViewController.swift */; };
 		C8E1F20D26281DDA008F9ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F20A26281DDA008F9ABC /* AppDelegate.swift */; };
+		C8E1F21C26281F01008F9ABC /* DirectoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F21B26281F01008F9ABC /* DirectoryListViewController.swift */; };
+		C8E1F22126281F23008F9ABC /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1CF26281D1D008F9ABC /* ImageLoader.swift */; };
+		C8E1F22226281F23008F9ABC /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1D326281D1D008F9ABC /* Page.swift */; };
+		C8E1F22326281F23008F9ABC /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1D026281D1D008F9ABC /* RemoteImage.swift */; };
+		C8E1F22426281F23008F9ABC /* DirectoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1DA26281D1D008F9ABC /* DirectoryRow.swift */; };
+		C8E1F22526281F23008F9ABC /* DirectoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1D926281D1D008F9ABC /* DirectoryListView.swift */; };
+		C8E1F22626281F23008F9ABC /* DirectoryFeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1D826281D1D008F9ABC /* DirectoryFeaturedView.swift */; };
+		C8E1F22726281F23008F9ABC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1CE26281D1D008F9ABC /* Publisher.swift */; };
+		C8E1F22826281F23008F9ABC /* KernelRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1D526281D1D008F9ABC /* KernelRouter.swift */; };
+		C8E1F22926281F23008F9ABC /* KernelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1D626281D1D008F9ABC /* KernelClient.swift */; };
+		C8E1F22A26281F23008F9ABC /* ApplicationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1D226281D1D008F9ABC /* ApplicationInfo.swift */; };
+		C8E1F22B26281F23008F9ABC /* DirectoryModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F1DB26281D1D008F9ABC /* DirectoryModalView.swift */; };
+		C8E1F22C26281F23008F9ABC /* AppList.json in Resources */ = {isa = PBXBuildFile; fileRef = C8E1F1CC26281D1D008F9ABC /* AppList.json */; };
+		C8E1F23526281FD7008F9ABC /* RESTClient in Frameworks */ = {isa = PBXBuildFile; productRef = C8E1F23426281FD7008F9ABC /* RESTClient */; };
+		C8E1F23A26281FFA008F9ABC /* RESTClient in Frameworks */ = {isa = PBXBuildFile; productRef = C8E1F23926281FFA008F9ABC /* RESTClient */; };
 		C8FCA048260AA75700EF9147 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA047260AA75700EF9147 /* ExampleApp.swift */; };
 		C8FCA04A260AA75700EF9147 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA049260AA75700EF9147 /* ContentView.swift */; };
 		C8FCA04C260AA75800EF9147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8FCA04B260AA75800EF9147 /* Assets.xcassets */; };
-		C8FCA08F260AA85F00EF9147 /* RESTClient in Frameworks */ = {isa = PBXBuildFile; productRef = C8FCA08E260AA85F00EF9147 /* RESTClient */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +67,7 @@
 		C8E1F20826281DDA008F9ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C8E1F20926281DDA008F9ABC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8E1F20A26281DDA008F9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8E1F21B26281F01008F9ABC /* DirectoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryListViewController.swift; sourceTree = "<group>"; };
 		C8FCA044260AA75700EF9147 /* Example-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8FCA047260AA75700EF9147 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		C8FCA049260AA75700EF9147 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E1F23A26281FFA008F9ABC /* RESTClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8FCA08F260AA85F00EF9147 /* RESTClient in Frameworks */,
+				C8E1F23526281FD7008F9ABC /* RESTClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,11 +106,12 @@
 		C8E1F1CA26281D1D008F9ABC /* KernelDirectoryUI */ = {
 			isa = PBXGroup;
 			children = (
-				C8E1F1CB26281D1D008F9ABC /* TestData */,
-				C8E1F1CD26281D1D008F9ABC /* Utilities */,
-				C8E1F1D126281D1D008F9ABC /* Model */,
 				C8E1F1D426281D1D008F9ABC /* Client */,
+				C8E1F1D126281D1D008F9ABC /* Model */,
 				C8E1F1D726281D1D008F9ABC /* SwiftUI */,
+				C8E1F1CB26281D1D008F9ABC /* TestData */,
+				C8E1F21A26281EC3008F9ABC /* UIKit */,
+				C8E1F1CD26281D1D008F9ABC /* Utilities */,
 			);
 			name = KernelDirectoryUI;
 			path = ../Sources/KernelDirectoryUI;
@@ -162,6 +179,21 @@
 			path = "Example-UIKit";
 			sourceTree = "<group>";
 		};
+		C8E1F21A26281EC3008F9ABC /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C8E1F21B26281F01008F9ABC /* DirectoryListViewController.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C8E1F23826281FFA008F9ABC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C8FCA03B260AA75700EF9147 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +201,7 @@
 				C8FCA046260AA75700EF9147 /* Example-SwiftUI */,
 				C8E1F1F226281DAF008F9ABC /* Example-UIKit */,
 				C8FCA045260AA75700EF9147 /* Products */,
+				C8E1F23826281FFA008F9ABC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +241,9 @@
 			dependencies = (
 			);
 			name = "Example-UIKit";
+			packageProductDependencies = (
+				C8E1F23926281FFA008F9ABC /* RESTClient */,
+			);
 			productName = Example;
 			productReference = C8E1F1F126281DAF008F9ABC /* Example-UIKit.app */;
 			productType = "com.apple.product-type.application";
@@ -226,7 +262,7 @@
 			);
 			name = "Example-SwiftUI";
 			packageProductDependencies = (
-				C8FCA08E260AA85F00EF9147 /* RESTClient */,
+				C8E1F23426281FD7008F9ABC /* RESTClient */,
 			);
 			productName = Example;
 			productReference = C8FCA044260AA75700EF9147 /* Example-SwiftUI.app */;
@@ -260,7 +296,7 @@
 			);
 			mainGroup = C8FCA03B260AA75700EF9147;
 			packageReferences = (
-				C8FCA08D260AA85F00EF9147 /* XCRemoteSwiftPackageReference "RESTClient" */,
+				C8E1F23326281FD7008F9ABC /* XCRemoteSwiftPackageReference "RESTClient" */,
 			);
 			productRefGroup = C8FCA045260AA75700EF9147 /* Products */;
 			projectDirPath = "";
@@ -278,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8E1F20026281DB1008F9ABC /* LaunchScreen.storyboard in Resources */,
+				C8E1F22C26281F23008F9ABC /* AppList.json in Resources */,
 				C8E1F1FD26281DB1008F9ABC /* Assets.xcassets in Resources */,
 				C8E1F1FB26281DB0008F9ABC /* Main.storyboard in Resources */,
 			);
@@ -299,9 +336,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E1F21C26281F01008F9ABC /* DirectoryListViewController.swift in Sources */,
+				C8E1F22B26281F23008F9ABC /* DirectoryModalView.swift in Sources */,
 				C8E1F20D26281DDA008F9ABC /* AppDelegate.swift in Sources */,
+				C8E1F22426281F23008F9ABC /* DirectoryRow.swift in Sources */,
+				C8E1F22826281F23008F9ABC /* KernelRouter.swift in Sources */,
+				C8E1F22326281F23008F9ABC /* RemoteImage.swift in Sources */,
+				C8E1F22226281F23008F9ABC /* Page.swift in Sources */,
+				C8E1F22A26281F23008F9ABC /* ApplicationInfo.swift in Sources */,
+				C8E1F22926281F23008F9ABC /* KernelClient.swift in Sources */,
+				C8E1F22126281F23008F9ABC /* ImageLoader.swift in Sources */,
+				C8E1F22626281F23008F9ABC /* DirectoryFeaturedView.swift in Sources */,
 				C8E1F20C26281DDA008F9ABC /* ViewController.swift in Sources */,
 				C8E1F20B26281DDA008F9ABC /* SceneDelegate.swift in Sources */,
+				C8E1F22726281F23008F9ABC /* Publisher.swift in Sources */,
+				C8E1F22526281F23008F9ABC /* DirectoryListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +630,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C8FCA08D260AA85F00EF9147 /* XCRemoteSwiftPackageReference "RESTClient" */ = {
+		C8E1F23326281FD7008F9ABC /* XCRemoteSwiftPackageReference "RESTClient" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/EmilioPelaez/RESTClient";
 			requirement = {
@@ -592,9 +641,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C8FCA08E260AA85F00EF9147 /* RESTClient */ = {
+		C8E1F23426281FD7008F9ABC /* RESTClient */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C8FCA08D260AA85F00EF9147 /* XCRemoteSwiftPackageReference "RESTClient" */;
+			package = C8E1F23326281FD7008F9ABC /* XCRemoteSwiftPackageReference "RESTClient" */;
+			productName = RESTClient;
+		};
+		C8E1F23926281FFA008F9ABC /* RESTClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8E1F23326281FD7008F9ABC /* XCRemoteSwiftPackageReference "RESTClient" */;
 			productName = RESTClient;
 		};
 /* End XCSwiftPackageProductDependency section */
