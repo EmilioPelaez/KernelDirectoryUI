@@ -7,9 +7,9 @@
 
 import UIKit
 
-class DirectoryListModalController: UINavigationController {
+public class DirectoryListModalController: UINavigationController {
 	
-	init(client: KernelClient) {
+	public init(client: KernelClient) {
 		let listController = DirectoryListViewController(client: client)
 		super.init(rootViewController: listController)
 		

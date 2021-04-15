@@ -7,7 +7,7 @@ import Combine
 import Foundation
 import RESTClient
 
-class KernelClient: ObservableObject {
+public class KernelClient: ObservableObject {
 	
 	enum FeaturedState {
 		case undefined
@@ -36,7 +36,19 @@ class KernelClient: ObservableObject {
 	
 	private var bag: Set<AnyCancellable> = []
 	
-	init(all: AllState = .undefined, featured: FeaturedState = .undefined) {
+	public convenience init() {
+		self.init(all: .undefined, featured: .undefined)
+	}
+	
+	convenience init(all: AllState) {
+		self.init(all: all, featured: .undefined)
+	}
+	
+	convenience init(featured: FeaturedState) {
+		self.init(all: .undefined, featured: featured)
+	}
+	
+	init(all: AllState, featured: FeaturedState) {
 		guard let url = URL(string: "https://api.kernelproject.com") else {
 			preconditionFailure("Couldn't create URL")
 		}

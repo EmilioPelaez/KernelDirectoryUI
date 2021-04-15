@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct DirectoryFeaturedView: View {
+public struct DirectoryFeaturedView: View {
 	
 	@ObservedObject var client: KernelClient
 	@State var featuredState: KernelClient.FeaturedState = .undefined
 	let viewAllAction: () -> Void
 	
-	var body: some View {
+	public var body: some View {
 		VStack(spacing: 16) {
 			HStack {
 				Text("More Free Apps")

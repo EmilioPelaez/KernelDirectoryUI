@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 
-class DirectoryFeaturedAppsView: UIView {
+public class DirectoryFeaturedAppsView: UIView {
 
 	let client: KernelClient
 	
@@ -19,17 +19,13 @@ class DirectoryFeaturedAppsView: UIView {
 		return nib?[0] as? DirectoryFeaturedContentView
 	}()
 	
-	init(client: KernelClient) {
+	public init(client: KernelClient) {
 		self.client = client
 		super.init(frame: .zero)
 		
 		setup()
 		combine()
 		client.fetchFeatured()
-	}
-	
-	deinit {
-		print("OH NO!")
 	}
 	
 	@available(*, unavailable)

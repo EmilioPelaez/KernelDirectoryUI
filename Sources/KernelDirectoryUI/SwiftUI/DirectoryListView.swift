@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct DirectoryListView: View {
+public struct DirectoryListView: View {
 	
 	@ObservedObject var client: KernelClient
 	@State var listState: KernelClient.AllState = .undefined
 	
-	var body: some View {
+	public var body: some View {
 		Group {
 			switch listState {
 			case .undefined:

@@ -8,8 +8,9 @@
 import SwiftUI
 import UIKit
 
-class DirectoryListViewController: UIHostingController<DirectoryListView> {
-	init(client: KernelClient) {
+public class DirectoryListViewController: UIHostingController<DirectoryListView> {
+	
+	public init(client: KernelClient) {
 		super.init(rootView: .init(client: client))
 		
 		title = "More Apps"
@@ -19,4 +20,5 @@ class DirectoryListViewController: UIHostingController<DirectoryListView> {
 	@objc required dynamic init?(coder aDecoder: NSCoder) {
 		fatalError("Unsupported, use ini(client:)")
 	}
+	
 }

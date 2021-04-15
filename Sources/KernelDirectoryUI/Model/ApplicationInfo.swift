@@ -6,22 +6,22 @@
 import Foundation
 import RESTClient
 
-struct ApplicationInfo: Decodable {
-	let icon: URL
-	let name: String
-	let subtitle: String
-	let creator: String
-	let storeId: String
+public struct ApplicationInfo: Decodable {
+	public let icon: URL
+	public let name: String
+	public let subtitle: String
+	public let creator: String
+	public let storeId: String
 }
 
 extension ApplicationInfo: Identifiable {
-	var id: String { storeId }
+	public var id: String { storeId }
 }
 
 extension ApplicationInfo: Equatable {}
 
 extension ApplicationInfo: RemoteResource {
-	static var path: String { "applications" }
+	public static var path: String { "applications" }
 }
 
 extension ApplicationInfo {

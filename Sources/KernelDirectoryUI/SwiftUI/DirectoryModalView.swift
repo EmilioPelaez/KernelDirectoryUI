@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct DirectoryModalView: View {
+public struct DirectoryModalView: View {
 	
 	@Environment(\.presentationMode) var presentationMode
 	
 	let client: KernelClient
 	
-	var body: some View {
+	public var body: some View {
 		NavigationView {
 			DirectoryListView(client: client)
 				.navigationBarItems(leading: closeButton)
