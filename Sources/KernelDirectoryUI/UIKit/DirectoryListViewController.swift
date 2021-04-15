@@ -15,6 +15,7 @@ class DirectoryListViewController: UIHostingController<DirectoryListView> {
 		title = "More Apps"
 	}
 	
+	@available(*, unavailable)
 	@objc required dynamic init?(coder aDecoder: NSCoder) {
 		fatalError("Unsupported, use ini(client:)")
 	}

@@ -17,11 +17,12 @@ class ViewController: UIViewController {
 	
 	@IBAction func pushAction() {
 		let listController = DirectoryListViewController(client: client)
-		self.navigationController?.pushViewController(listController, animated: true)
+		navigationController?.pushViewController(listController, animated: true)
 	}
 	
 	@IBAction func presentAction() {
-		
+		let modalController = DirectoryListModalController(client: client)
+		present(modalController, animated: true)
 	}
 	
 }
