@@ -16,6 +16,10 @@ public struct DirectoryModalView: View {
 	
 	let client: KernelClient
 	
+	public init(client: KernelClient) {
+		self.client = client
+	}
+	
 	public var body: some View {
 		NavigationView {
 			DirectoryListView(client: client)

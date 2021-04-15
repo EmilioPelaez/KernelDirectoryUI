@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KernelDirectoryUI
 
 @available(iOS 14.0, *)
 class ViewController: UIViewController {

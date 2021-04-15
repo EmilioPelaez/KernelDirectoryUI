@@ -14,6 +14,11 @@ public struct DirectoryFeaturedView: View {
 	@State var featuredState: KernelClient.FeaturedState = .undefined
 	let viewAllAction: () -> Void
 	
+	public init(client: KernelClient, viewAllAction: @escaping () -> Void) {
+		self.client = client
+		self.viewAllAction = viewAllAction
+	}
+	
 	public var body: some View {
 		VStack(spacing: 16) {
 			HStack {

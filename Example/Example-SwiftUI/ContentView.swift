@@ -5,6 +5,7 @@
 //  Created by Emilio Peláez on 23/3/21.
 //
 
+import KernelDirectoryUI
 import SwiftUI
 
 struct ContentView: View {
