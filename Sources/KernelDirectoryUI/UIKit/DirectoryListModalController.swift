@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14.0, *)
 public class DirectoryListModalController: UINavigationController {
 	
 	public init(client: KernelClient) {

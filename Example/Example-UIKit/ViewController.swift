@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14.0, *)
 class ViewController: UIViewController {
 	
 	let client = KernelClient()

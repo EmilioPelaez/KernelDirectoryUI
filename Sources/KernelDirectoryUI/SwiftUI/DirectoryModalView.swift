@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, *)
 public struct DirectoryModalView: View {
 	
 	@Environment(\.presentationMode) var presentationMode
@@ -36,6 +37,7 @@ public struct DirectoryModalView: View {
 	}
 }
 
+@available(iOS 14.0, *)
 struct DirectoryModalView_Previews: PreviewProvider {
 	static var previews: some View {
 		DirectoryModalView(client: .init())

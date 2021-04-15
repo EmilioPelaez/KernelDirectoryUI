@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 
+@available(iOS 14.0, *)
 public class DirectoryListViewController: UIHostingController<DirectoryListView> {
 	
 	public init(client: KernelClient) {

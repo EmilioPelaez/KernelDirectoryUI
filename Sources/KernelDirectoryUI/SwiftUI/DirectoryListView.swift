@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, *)
 public struct DirectoryListView: View {
 	
 	@ObservedObject var client: KernelClient
@@ -72,6 +73,7 @@ public struct DirectoryListView: View {
 	}
 }
 
+@available(iOS 14.0, *)
 struct DirectoryListView_Previews: PreviewProvider {
 	static var previews: some View {
 		DirectoryListView(client: KernelClient(all: .undefined))

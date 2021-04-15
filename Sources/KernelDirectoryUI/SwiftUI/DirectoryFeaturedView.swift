@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, *)
 public struct DirectoryFeaturedView: View {
 	
 	@ObservedObject var client: KernelClient
@@ -75,6 +76,7 @@ public struct DirectoryFeaturedView: View {
 	
 }
 
+@available(iOS 14.0, *)
 struct DirectoryFeaturedView_Previews: PreviewProvider {
 	static var previews: some View {
 		DirectoryFeaturedView(client: KernelClient(featured: .undefined)) { }
