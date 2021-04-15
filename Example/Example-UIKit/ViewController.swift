@@ -11,8 +11,13 @@ class ViewController: UIViewController {
 	
 	let client = KernelClient()
 	
+	@IBOutlet var stackView: UIStackView!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		let featuredViewController = DirectoryFeaturedAppsView(client: client)
+		stackView.addArrangedSubview(featuredViewController)
 	}
 	
 	@IBAction func pushAction() {

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DirectoryFeaturedContentView" customModule="Example_UIKit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="06N-mZ-eoR">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Free Apps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpY-su-5QU">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qZ-bc-8eV">
+                            <rect key="frame" x="0.0" y="36.5" width="414" height="230"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kEk-Lw-Mpq">
+                                    <rect key="frame" x="184" y="89.5" width="46" height="50.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pW2-s5-E8t">
+                                            <rect key="frame" x="0.0" y="0.0" width="46" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXy-qz-Zy5">
+                                            <rect key="frame" x="0.0" y="20.5" width="46" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="kEk-Lw-Mpq" secondAttribute="bottom" constant="90" id="LS1-Ii-9gN"/>
+                                <constraint firstItem="kEk-Lw-Mpq" firstAttribute="top" secondItem="1qZ-bc-8eV" secondAttribute="top" constant="89.5" id="ixP-CY-ZUc"/>
+                                <constraint firstItem="kEk-Lw-Mpq" firstAttribute="centerX" secondItem="1qZ-bc-8eV" secondAttribute="centerX" id="nmL-kN-COZ"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YYP-b4-OJE">
+                            <rect key="frame" x="0.0" y="282.5" width="414" height="117.5"/>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="06N-mZ-eoR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1AU-pC-mG5"/>
+                <constraint firstItem="06N-mZ-eoR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7yq-Dr-Vcf"/>
+                <constraint firstAttribute="trailing" secondItem="06N-mZ-eoR" secondAttribute="trailing" id="L5L-3A-xUC"/>
+                <constraint firstAttribute="bottom" secondItem="06N-mZ-eoR" secondAttribute="bottom" id="Sh9-WQ-V3U"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="appsContainer" destination="YYP-b4-OJE" id="R6G-G3-9Iz"/>
+                <outlet property="emptyStateButton" destination="AXy-qz-Zy5" id="HLA-t6-7R7"/>
+                <outlet property="emptyStateContainer" destination="1qZ-bc-8eV" id="Nuc-cD-6rv"/>
+                <outlet property="emptyStateLabel" destination="pW2-s5-E8t" id="XrJ-KW-gmV"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="123"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -41,6 +41,10 @@
 		C8E1F23526281FD7008F9ABC /* RESTClient in Frameworks */ = {isa = PBXBuildFile; productRef = C8E1F23426281FD7008F9ABC /* RESTClient */; };
 		C8E1F23A26281FFA008F9ABC /* RESTClient in Frameworks */ = {isa = PBXBuildFile; productRef = C8E1F23926281FFA008F9ABC /* RESTClient */; };
 		C8E1F23E26282194008F9ABC /* DirectoryListModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F23D26282194008F9ABC /* DirectoryListModalController.swift */; };
+		C8E1F250262828F5008F9ABC /* DirectoryFeaturedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F24F262828F5008F9ABC /* DirectoryFeaturedContentView.swift */; };
+		C8E1F25A26282E25008F9ABC /* DirectoryFeaturedContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E1F25926282E25008F9ABC /* DirectoryFeaturedContentView.xib */; };
+		C8E1F25E26282E3B008F9ABC /* DirectoryFeaturedAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F25D26282E3B008F9ABC /* DirectoryFeaturedAppsView.swift */; };
+		C8E1F26626283507008F9ABC /* DirectoryRowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E1F26526283507008F9ABC /* DirectoryRowViewController.swift */; };
 		C8FCA048260AA75700EF9147 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA047260AA75700EF9147 /* ExampleApp.swift */; };
 		C8FCA04A260AA75700EF9147 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCA049260AA75700EF9147 /* ContentView.swift */; };
 		C8FCA04C260AA75800EF9147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8FCA04B260AA75800EF9147 /* Assets.xcassets */; };
@@ -70,6 +74,10 @@
 		C8E1F20A26281DDA008F9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8E1F21B26281F01008F9ABC /* DirectoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryListViewController.swift; sourceTree = "<group>"; };
 		C8E1F23D26282194008F9ABC /* DirectoryListModalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryListModalController.swift; sourceTree = "<group>"; };
+		C8E1F24F262828F5008F9ABC /* DirectoryFeaturedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryFeaturedContentView.swift; sourceTree = "<group>"; };
+		C8E1F25926282E25008F9ABC /* DirectoryFeaturedContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectoryFeaturedContentView.xib; sourceTree = "<group>"; };
+		C8E1F25D26282E3B008F9ABC /* DirectoryFeaturedAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryFeaturedAppsView.swift; sourceTree = "<group>"; };
+		C8E1F26526283507008F9ABC /* DirectoryRowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryRowViewController.swift; sourceTree = "<group>"; };
 		C8FCA044260AA75700EF9147 /* Example-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8FCA047260AA75700EF9147 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		C8FCA049260AA75700EF9147 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,8 +192,12 @@
 		C8E1F21A26281EC3008F9ABC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				C8E1F21B26281F01008F9ABC /* DirectoryListViewController.swift */,
+				C8E1F24F262828F5008F9ABC /* DirectoryFeaturedContentView.swift */,
+				C8E1F25926282E25008F9ABC /* DirectoryFeaturedContentView.xib */,
+				C8E1F25D26282E3B008F9ABC /* DirectoryFeaturedAppsView.swift */,
 				C8E1F23D26282194008F9ABC /* DirectoryListModalController.swift */,
+				C8E1F21B26281F01008F9ABC /* DirectoryListViewController.swift */,
+				C8E1F26526283507008F9ABC /* DirectoryRowViewController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -318,6 +330,7 @@
 			files = (
 				C8E1F20026281DB1008F9ABC /* LaunchScreen.storyboard in Resources */,
 				C8E1F22C26281F23008F9ABC /* AppList.json in Resources */,
+				C8E1F25A26282E25008F9ABC /* DirectoryFeaturedContentView.xib in Resources */,
 				C8E1F1FD26281DB1008F9ABC /* Assets.xcassets in Resources */,
 				C8E1F1FB26281DB0008F9ABC /* Main.storyboard in Resources */,
 			);
@@ -346,8 +359,11 @@
 				C8E1F22826281F23008F9ABC /* KernelRouter.swift in Sources */,
 				C8E1F22326281F23008F9ABC /* RemoteImage.swift in Sources */,
 				C8E1F22226281F23008F9ABC /* Page.swift in Sources */,
+				C8E1F250262828F5008F9ABC /* DirectoryFeaturedContentView.swift in Sources */,
+				C8E1F26626283507008F9ABC /* DirectoryRowViewController.swift in Sources */,
 				C8E1F22A26281F23008F9ABC /* ApplicationInfo.swift in Sources */,
 				C8E1F22926281F23008F9ABC /* KernelClient.swift in Sources */,
+				C8E1F25E26282E3B008F9ABC /* DirectoryFeaturedAppsView.swift in Sources */,
 				C8E1F22126281F23008F9ABC /* ImageLoader.swift in Sources */,
 				C8E1F22626281F23008F9ABC /* DirectoryFeaturedView.swift in Sources */,
 				C8E1F23E26282194008F9ABC /* DirectoryListModalController.swift in Sources */,
