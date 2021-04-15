@@ -27,9 +27,9 @@ struct DirectoryFeaturedView: View {
 						DirectoryRow(app: app)
 							.onTapGesture { openApp(app) }
 					}
-					Button(action: viewAllAction) {
-						Text("More Apps")
-					}
+//					Button(action: viewAllAction) {
+//						Text("More Apps")
+//					}
 				}
 			case _:
 				emptyView(featuredState)
