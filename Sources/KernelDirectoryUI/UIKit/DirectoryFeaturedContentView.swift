@@ -5,6 +5,8 @@
 //  Created by Emilio Peláez on 15/4/21.
 //
 
+#if canImport(UIKit)
+
 import UIKit
 
 class DirectoryFeaturedContentView: UIView {
@@ -63,3 +65,5 @@ class DirectoryFeaturedContentView: UIView {
 	}
 	
 }
+
+#endif

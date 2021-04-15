@@ -5,6 +5,8 @@
 //  Created by Emilio Peláez on 15/4/21.
 //
 
+#if canImport(UIKit)
+
 import Combine
 import UIKit
 
@@ -64,3 +66,5 @@ public class DirectoryFeaturedAppsView: UIView {
 		}.store(in: &bag)
 	}
 }
+
+#endif

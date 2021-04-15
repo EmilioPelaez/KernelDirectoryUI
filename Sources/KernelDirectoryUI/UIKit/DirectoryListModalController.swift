@@ -5,6 +5,8 @@
 //  Created by Emilio Peláez on 15/4/21.
 //
 
+#if canImport(UIKit)
+
 import UIKit
 
 @available(iOS 14.0, *)
@@ -28,3 +30,5 @@ public class DirectoryListModalController: UINavigationController {
 	}
 	
 }
+
+#endif

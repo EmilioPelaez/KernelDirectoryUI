@@ -5,6 +5,8 @@
 //  Created by Emilio Peláez on 15/4/21.
 //
 
+#if canImport(UIKit)
+
 import SwiftUI
 import UIKit
 
@@ -23,3 +25,5 @@ public class DirectoryListViewController: UIHostingController<DirectoryListView>
 	}
 	
 }
+
+#endif

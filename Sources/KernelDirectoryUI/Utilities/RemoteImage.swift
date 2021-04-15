@@ -3,6 +3,8 @@
 //  Created by Emilio Peláez on 23/3/21.
 //
 
+#if canImport(UIKit)
+
 import SwiftUI
 
 struct RemoteImage<Placeholder: View>: View {
@@ -36,3 +38,5 @@ struct RemoteImage_Previews: PreviewProvider {
 		RemoteImage(url: URL(fileURLWithPath: ""), placeholder: Color.red)
 	}
 }
+
+#endif

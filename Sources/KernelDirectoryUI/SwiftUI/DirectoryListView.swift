@@ -5,6 +5,8 @@
 //  Created by Emilio Peláez on 5/4/21.
 //
 
+#if canImport(UIKit)
+
 import SwiftUI
 
 @available(iOS 14.0, *)
@@ -79,3 +81,5 @@ struct DirectoryListView_Previews: PreviewProvider {
 		DirectoryListView(client: KernelClient(all: .undefined))
 	}
 }
+
+#endif

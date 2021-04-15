@@ -3,6 +3,8 @@
 //  Created by Emilio Peláez on 23/3/21.
 //
 
+#if canImport(UIKit)
+
 import Combine
 import Foundation
 import SwiftUI
@@ -61,3 +63,5 @@ class ImageLoader: ObservableObject {
 	}
 	
 }
+
+#endif

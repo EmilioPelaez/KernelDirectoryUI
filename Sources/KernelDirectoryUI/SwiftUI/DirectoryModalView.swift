@@ -5,6 +5,8 @@
 //  Created by Emilio Peláez on 14/4/21.
 //
 
+#if canImport(UIKit)
+
 import SwiftUI
 
 @available(iOS 14.0, *)
@@ -43,3 +45,5 @@ struct DirectoryModalView_Previews: PreviewProvider {
 		DirectoryModalView(client: .init())
 	}
 }
+
+#endif
