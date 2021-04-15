@@ -46,7 +46,7 @@ struct DirectoryListView: View {
 						}
 					}
 					if state == .loaded {
-						Button(action: client.fetchAll) {
+						Button(action: client.fetchMore) {
 							Text("Load More")
 						}
 					}

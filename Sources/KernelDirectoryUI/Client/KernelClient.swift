@@ -68,17 +68,27 @@ class KernelClient: ObservableObject {
 	func fetchAll() {
 		switch all {
 		case .undefined:
-			fetchMore()
+			fetch()
 		case let .failed(results, page):
-			fetchMore(results: results, page: page)
+			fetch(results: results, page: page)
+		case _: break
+		}
+	}
+	
+	func fetchMore() {
+		switch all {
+		case .undefined:
+			fetch()
+		case let .failed(results, page):
+			fetch(results: results, page: page)
 		case .list(let results, let page, .loaded):
-			fetchMore(results: results, page: page)
+			fetch(results: results, page: page)
 		case _: break
 		}
 	}
 	
 	let pageSize = 1
-	private func fetchMore(results: [ApplicationInfo] = [], page: Page? = nil) {
+	private func fetch(results: [ApplicationInfo] = [], page: Page? = nil) {
 		let page = page ?? Page(page: -1, size: 0, total: 0)
 		all = .list(results, page, .loading)
 		client.page(ApplicationInfo.self, page: page.page + 1, pageSize: pageSize)
