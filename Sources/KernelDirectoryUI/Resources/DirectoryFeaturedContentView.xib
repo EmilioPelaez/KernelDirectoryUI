@@ -18,14 +18,28 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="06N-mZ-eoR">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Free Apps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpY-su-5QU">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-CL-TN5">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Free Apps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpY-su-5QU">
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="30"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i50-hr-FcJ">
+                                    <rect key="frame" x="385.5" y="0.0" width="28.5" height="30"/>
+                                    <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                    <state key="normal" image="info.circle" catalog="system">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        </preferredSymbolConfiguration>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qZ-bc-8eV">
-                            <rect key="frame" x="0.0" y="36.5" width="414" height="230"/>
+                            <rect key="frame" x="0.0" y="46" width="414" height="230"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kEk-Lw-Mpq">
                                     <rect key="frame" x="184" y="89.5" width="46" height="50.5"/>
@@ -51,7 +65,7 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YYP-b4-OJE">
-                            <rect key="frame" x="0.0" y="282.5" width="414" height="117.5"/>
+                            <rect key="frame" x="0.0" y="292" width="414" height="108"/>
                         </stackView>
                     </subviews>
                 </stackView>
@@ -70,11 +84,13 @@
                 <outlet property="emptyStateButton" destination="AXy-qz-Zy5" id="HLA-t6-7R7"/>
                 <outlet property="emptyStateContainer" destination="1qZ-bc-8eV" id="Nuc-cD-6rv"/>
                 <outlet property="emptyStateLabel" destination="pW2-s5-E8t" id="XrJ-KW-gmV"/>
+                <outlet property="infoButton" destination="i50-hr-FcJ" id="boU-V0-iCn"/>
             </connections>
             <point key="canvasLocation" x="132" y="123"/>
         </view>
     </objects>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

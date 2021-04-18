@@ -13,6 +13,8 @@ class DirectoryFeaturedContentView: UIView {
 	
 	@IBOutlet var appsContainer: UIStackView!
 	
+	@IBOutlet var infoButton: UIButton!
+	
 	@IBOutlet var emptyStateContainer: UIView!
 	@IBOutlet var emptyStateLabel: UILabel!
 	@IBOutlet var emptyStateButton: UIButton!

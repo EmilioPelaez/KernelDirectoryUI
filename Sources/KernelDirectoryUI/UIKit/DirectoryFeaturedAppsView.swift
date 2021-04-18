@@ -13,6 +13,7 @@ import UIKit
 public class DirectoryFeaturedAppsView: UIView {
 
 	let client: KernelClient
+	weak var presentingController: UIViewController?
 	
 	var bag: Set<AnyCancellable> = []
 	
@@ -21,8 +22,10 @@ public class DirectoryFeaturedAppsView: UIView {
 		return nib?[0] as? DirectoryFeaturedContentView
 	}()
 	
-	public init(client: KernelClient) {
+	public init(client: KernelClient, presentingController: UIViewController) {
 		self.client = client
+		self.presentingController = presentingController
+		
 		super.init(frame: .zero)
 		
 		setup()
@@ -46,6 +49,8 @@ public class DirectoryFeaturedAppsView: UIView {
 		trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
 		topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
 		bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+		
+		contentView.infoButton.addTarget(self, action: #selector(infoAction), for: .touchUpInside)
 	}
 	
 	private func combine() {
@@ -64,6 +69,14 @@ public class DirectoryFeaturedAppsView: UIView {
 				}
 			}
 		}.store(in: &bag)
+	}
+	
+	@objc func infoAction() {
+		guard let presentingController = presentingController else { return }
+		let alertController = UIAlertController(title: Constant.information, message: Constant.infoText, preferredStyle: .alert)
+		let action = UIAlertAction(title: Constant.okay, style: .default)
+		alertController.addAction(action)
+		presentingController.present(alertController, animated: true)
 	}
 }
 

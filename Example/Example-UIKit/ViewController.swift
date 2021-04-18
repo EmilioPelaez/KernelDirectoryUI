@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		let featuredViewController = DirectoryFeaturedAppsView(client: client)
+		let featuredViewController = DirectoryFeaturedAppsView(client: client, presentingController: self)
 		stackView.addArrangedSubview(featuredViewController)
 	}
 	
