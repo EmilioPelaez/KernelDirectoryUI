@@ -11,7 +11,7 @@ import KernelDirectoryUI
 @available(iOS 14.0, *)
 class ViewController: UIViewController {
 	
-	let client = KernelClient()
+	let client = KernelClient(appId: "1550574694")
 	
 	@IBOutlet var stackView: UIStackView!
 	

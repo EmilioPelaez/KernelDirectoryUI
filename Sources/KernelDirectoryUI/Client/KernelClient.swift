@@ -28,6 +28,7 @@ public class KernelClient: ObservableObject {
 		case list([ApplicationInfo], Page, LoadingState)
 	}
 	
+	public let appId: String
 	private let client: PaginatedClient<Page>
 	private let featuredRouter = KernelRouter(route: .featured)
 	
@@ -36,25 +37,38 @@ public class KernelClient: ObservableObject {
 	
 	private var bag: Set<AnyCancellable> = []
 	
-	public convenience init() {
-		self.init(all: .undefined, featured: .undefined)
+	/*
+		appId is the StoreId is the App Store id of your app, it should contain only numbers (i.e. 1457799658)
+		It will be used to filter your app from the featured list.
+	*/
+	public convenience init(appId: String = "") {
+		self.init(appId: appId, all: .undefined, featured: .undefined)
 	}
 	
 	convenience init(all: AllState) {
-		self.init(all: all, featured: .undefined)
+		self.init(appId: "", all: all, featured: .undefined)
 	}
 	
 	convenience init(featured: FeaturedState) {
-		self.init(all: .undefined, featured: featured)
+		self.init(appId: "", all: .undefined, featured: featured)
 	}
 	
-	init(all: AllState, featured: FeaturedState) {
+	init(appId: String, all: AllState, featured: FeaturedState) {
 		guard let url = URL(string: "https://api.kernelproject.com") else {
 			preconditionFailure("Couldn't create URL")
 		}
+		self.appId = appId
 		self.client = PaginatedClient(baseUrl: url, pageSizeKey: "size")
 		self.all = all
 		self.featured = featured
+		
+		self.client.requestConfiguration = { request in
+			guard let url = request.url else { return }
+			guard var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return }
+			components.queryItems = (components.queryItems ?? []) + [URLQueryItem(name: "appId", value: appId)]
+			guard let finalUrl = components.url else { return }
+			request.url = finalUrl
+		}
 	}
 	
 	func fetchFeatured() {

@@ -9,7 +9,7 @@ import KernelDirectoryUI
 import SwiftUI
 
 struct ContentView: View {
-	let client = KernelClient()
+	let client = KernelClient(appId: "1457799658")
 	@State var showFullList = false
 	
 	var body: some View {
