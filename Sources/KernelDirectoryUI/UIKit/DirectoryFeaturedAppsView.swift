@@ -54,11 +54,11 @@ public class DirectoryFeaturedAppsView: UIView {
 			UIView.animate(withDuration: 0.25) {
 				switch state {
 				case .undefined:
-					contentView.showEmptyState(buttonTitle: "Load Apps")
+					contentView.showEmptyState(buttonTitle: Constant.loadApps)
 				case .loading:
-					contentView.showEmptyState(message: "Loading...")
+					contentView.showEmptyState(message: Constant.loading)
 				case .failed:
-					contentView.showEmptyState(message: "Unable to load.", buttonTitle: "Try Again")
+					contentView.showEmptyState(message: Constant.unableToLoad, buttonTitle: Constant.tryAgain)
 				case .loaded(let apps):
 					contentView.showApps(apps)
 				}

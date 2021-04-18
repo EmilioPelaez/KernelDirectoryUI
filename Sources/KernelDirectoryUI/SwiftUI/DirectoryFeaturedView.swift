@@ -22,7 +22,7 @@ public struct DirectoryFeaturedView: View {
 	public var body: some View {
 		VStack(spacing: 16) {
 			HStack {
-				Text("More Free Apps")
+				Text(Constant.moreFreeApps)
 				Spacer()
 			}
 			.font(.headline)
@@ -34,7 +34,7 @@ public struct DirectoryFeaturedView: View {
 							.onTapGesture { openApp(app) }
 					}
 //					Button(action: viewAllAction) {
-//						Text("More Apps")
+//						Text(Constant.moreApps)
 //					}
 				}
 			case _:
@@ -55,19 +55,19 @@ public struct DirectoryFeaturedView: View {
 			switch state {
 			case .undefined:
 				Button(action: client.fetchFeatured) {
-					Text("Load Apps")
+					Text(Constant.loadApps)
 				}
 			case .loading:
-				Text("Loading...")
+				Text(Constant.loading)
 			case .failed:
 				VStack(spacing: 8) {
-					Text("Unable to load.")
+					Text(Constant.unableToLoad)
 					Button(action: client.fetchFeatured) {
-						Text("Try Again")
+						Text(Constant.unableToLoad)
 					}
 				}
 			case .loaded:
-				Text("Unable to load.")
+				Text(Constant.unableToLoad)
 			}
 		}
 		.padding()
@@ -75,7 +75,7 @@ public struct DirectoryFeaturedView: View {
 	}
 	
 	func openApp(_ app: ApplicationInfo) {
-		guard let url = URL(string: "https://apps.apple.com/app/id" + app.id) else { return }
+		guard let url = URL(string: Constant.storeUrlPrefix + app.id) else { return }
 		UIApplication.shared.open(url)
 	}
 	

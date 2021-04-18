@@ -60,7 +60,7 @@ class DirectoryFeaturedContentView: UIView {
 			return
 		}
 		let app = hostingControllers[index].app
-		guard let url = URL(string: "https://apps.apple.com/app/id" + app.id) else { return }
+		guard let url = URL(string: Constant.storeUrlPrefix + app.id) else { return }
 		UIApplication.shared.open(url)
 	}
 	

@@ -20,20 +20,20 @@ public struct DirectoryListView: View {
 			switch listState {
 			case .undefined:
 				Button(action: client.fetchAll) {
-					Text("Load Apps")
+					Text(Constant.loadApps)
 				}
 			case .list(let results, _, .loading) where results.isEmpty:
-				Text("Loading...")
+				Text(Constant.loading)
 			case .failed:
 				VStack(spacing: 8) {
-					Text("Unable to load.")
+					Text(Constant.unableToLoad)
 					Button(action: client.fetchAll) {
-						Text("Try Again")
+						Text(Constant.tryAgain)
 					}
 				}
 			case .list(let results, _, let state):
 				VStack {
-					Text("These apps are free to download, contain no ads and don't have any functionality restricted by In-App Purchases. They're totally free to use!")
+					Text(Constant.infoText)
 						.lineLimit(nil)
 						.font(.callout)
 						.multilineTextAlignment(.leading)
@@ -50,7 +50,7 @@ public struct DirectoryListView: View {
 					}
 					if state == .loaded {
 						Button(action: client.fetchMore) {
-							Text("Load More")
+							Text(Constant.loadMore)
 						}
 					}
 					Spacer()
@@ -59,7 +59,7 @@ public struct DirectoryListView: View {
 			}
 		}
 		.padding()
-		.navigationTitle("More Apps")
+		.navigationTitle(Constant.moreApps)
 		.onAppear {
 			client.fetchAll()
 			listState = client.all
@@ -70,7 +70,7 @@ public struct DirectoryListView: View {
 	}
 	
 	func openApp(_ app: ApplicationInfo) {
-		guard let url = URL(string: "https://apps.apple.com/app/id" + app.id) else { return }
+		guard let url = URL(string: Constant.storeUrlPrefix + app.id) else { return }
 		UIApplication.shared.open(url)
 	}
 }

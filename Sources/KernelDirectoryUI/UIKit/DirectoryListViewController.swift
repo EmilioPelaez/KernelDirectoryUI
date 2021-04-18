@@ -16,7 +16,7 @@ public class DirectoryListViewController: UIHostingController<DirectoryListView>
 	public init(client: KernelClient) {
 		super.init(rootView: .init(client: client))
 		
-		title = "More Apps"
+		title = Constant.moreApps
 	}
 	
 	@available(*, unavailable)
