@@ -12,6 +12,7 @@ public struct DirectoryFeaturedView: View {
 	
 	@ObservedObject var client: KernelClient
 	@State var featuredState: KernelClient.FeaturedState = .undefined
+	@State var showInfo = false
 	let viewAllAction: () -> Void
 	
 	public init(client: KernelClient, viewAllAction: @escaping () -> Void) {
@@ -24,6 +25,10 @@ public struct DirectoryFeaturedView: View {
 			HStack {
 				Text(Constant.moreFreeApps)
 				Spacer()
+				Button(action: { showInfo = true }) {
+					Image(systemName: "info.circle")
+						.padding(4)
+				}
 			}
 			.font(.headline)
 			switch featuredState {
@@ -47,6 +52,9 @@ public struct DirectoryFeaturedView: View {
 		}
 		.onChange(of: client.featured) { featured in
 			withAnimation { featuredState = featured }
+		}
+		.alert(isPresented: $showInfo) {
+			Alert(title: Text(Constant.information), message: Text(Constant.infoText), dismissButton: .default(Text(Constant.okay)))
 		}
 	}
 	
@@ -84,13 +92,14 @@ public struct DirectoryFeaturedView: View {
 @available(iOS 14.0, *)
 struct DirectoryFeaturedView_Previews: PreviewProvider {
 	static var previews: some View {
-		DirectoryFeaturedView(client: KernelClient(featured: .undefined)) { }
+//		DirectoryFeaturedView(client: KernelClient(featured: .undefined)) { }
 		
-		DirectoryFeaturedView(client: KernelClient(featured: .failed)) { }
+//		DirectoryFeaturedView(client: KernelClient(featured: .failed)) { }
 		
 		DirectoryFeaturedView(client: KernelClient(featured: .loading)) { }
+			.previewLayout(.sizeThatFits)
 		
-		DirectoryFeaturedView(client: KernelClient(featured: .loaded([]))) { }
+//		DirectoryFeaturedView(client: KernelClient(featured: .loaded([]))) { }
 	}
 }
 

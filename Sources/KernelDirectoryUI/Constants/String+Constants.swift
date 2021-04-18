@@ -8,11 +8,13 @@
 import Foundation
 
 enum Constant {
+	static let information = "Information"
 	static let loadApps = "Load Applications"
 	static let loading = "Loading..."
 	static let loadMore = "Load More"
 	static let moreFreeApps = "More Free Apps"
 	static let moreApps = "More Apps"
+	static let okay = "Okay"
 	static let tryAgain = "Try Again"
 	static let unableToLoad = "Unable to load."
 	
