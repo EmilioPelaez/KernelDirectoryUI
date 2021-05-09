@@ -10,10 +10,11 @@ import SwiftUI
 struct DirectoryRow: View {
 	
 	let app: ApplicationInfo
+	let style: KernelDirectoryStyle
 	
 	var body: some View {
 		HStack(alignment: .top) {
-			RemoteImage(url: app.icon, placeholder: Color(.tertiarySystemBackground))
+			RemoteImage(url: app.icon, placeholder: style.iconPlaceholderColor)
 				.aspectRatio(contentMode: .fill)
 				.frame(width: 60, height: 60)
 				.clipped()
@@ -22,10 +23,10 @@ struct DirectoryRow: View {
 				HStack {
 					VStack(alignment: .leading) {
 						Text(app.name)
-							.foregroundColor(.primary)
+							.foregroundColor(style.primaryTextColor)
 							.font(.headline)
 						Text(app.subtitle)
-							.foregroundColor(.secondary)
+							.foregroundColor(style.secondaryTextColor)
 							.font(.callout)
 					}
 				}
@@ -34,16 +35,16 @@ struct DirectoryRow: View {
 			Spacer()
 			Image(systemName: "icloud.and.arrow.down")
 				.font(.system(size: 15, weight: .bold, design: .default))
-				.foregroundColor(.blue)
+				.foregroundColor(style.accentColor)
 				.frame(width: 30, height: 30)
-				.background(Color(.tertiarySystemBackground))
+				.background(style.downloadButtonBackgroundColor)
 				.mask(RoundedRectangle(cornerRadius: 6, style: .continuous))
 				.padding(.top, 6)
 		}
 		.padding(8)
 		.background(
 			RoundedRectangle(cornerRadius: 8, style: .continuous)
-									.foregroundColor(Color(.secondarySystemBackground))
+				.foregroundColor(style.rowBackgroundColor)
 		)
 		
 	}
@@ -51,7 +52,7 @@ struct DirectoryRow: View {
 
 struct DirectoryRow_Previews: PreviewProvider {
 	static var previews: some View {
-		DirectoryRow(app: .example)
+		DirectoryRow(app: .example, style: .default)
 			.padding()
 			.previewLayout(.sizeThatFits)
 	}

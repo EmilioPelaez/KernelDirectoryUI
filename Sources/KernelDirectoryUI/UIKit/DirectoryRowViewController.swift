@@ -16,7 +16,7 @@ class DirectoryRowViewController: UIHostingController<DirectoryRow> {
 	
 	init(app: ApplicationInfo) {
 		self.app = app
-		super.init(rootView: DirectoryRow(app: app))
+		super.init(rootView: DirectoryRow(app: app, style: .default))
 	}
 	
 	@available(*, unavailable)

@@ -44,7 +44,7 @@ public struct DirectoryListView: View {
 						.mask(RoundedRectangle(cornerRadius: 6, style: .continuous))
 					LazyVStack {
 						ForEach(results) { app in
-							DirectoryRow(app: app)
+							DirectoryRow(app: app, style: .default)
 								.onTapGesture { openApp(app) }
 						}
 					}
