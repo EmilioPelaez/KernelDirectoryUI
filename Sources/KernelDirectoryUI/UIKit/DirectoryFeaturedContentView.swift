@@ -13,6 +13,7 @@ class DirectoryFeaturedContentView: UIView {
 	
 	@IBOutlet var appsContainer: UIStackView!
 	
+	@IBOutlet var titleLabel: UILabel!
 	@IBOutlet var infoButton: UIButton!
 	
 	@IBOutlet var emptyStateContainer: UIView!
@@ -57,6 +58,14 @@ class DirectoryFeaturedContentView: UIView {
 		emptyStateButton.isHidden = buttonTitle == nil
 	}
 	
+	func apply(_ style: KernelDirectoryStyle) {
+		guard #available(iOS 14.0, *) else { return }
+		titleLabel.textColor = UIColor(style.primaryTextColor)
+		emptyStateLabel.textColor = UIColor(style.primaryTextColor)
+		emptyStateButton.setTitleColor(UIColor(style.accentColor), for: .normal)
+		infoButton.tintColor = UIColor(style.accentColor)
+	}
+	
 	@objc func tapAction(_ recognizer: UITapGestureRecognizer) {
 		guard let view = recognizer.view, let index = appsContainer.arrangedSubviews.firstIndex(of: view) else {
 			return
@@ -65,7 +74,6 @@ class DirectoryFeaturedContentView: UIView {
 		guard let url = URL(string: Constant.storeUrlPrefix + app.id) else { return }
 		UIApplication.shared.open(url)
 	}
-	
 }
 
 #endif

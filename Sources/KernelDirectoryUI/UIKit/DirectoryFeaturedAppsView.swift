@@ -22,13 +22,13 @@ public class DirectoryFeaturedAppsView: UIView {
 		return nib?[0] as? DirectoryFeaturedContentView
 	}()
 	
-	public init(client: KernelClient, presentingController: UIViewController) {
+	public init(client: KernelClient, style: KernelDirectoryStyle = .default, presentingController: UIViewController) {
 		self.client = client
 		self.presentingController = presentingController
 		
 		super.init(frame: .zero)
 		
-		setup()
+		setup(with: style)
 		combine()
 		client.fetchFeatured()
 	}
@@ -38,7 +38,7 @@ public class DirectoryFeaturedAppsView: UIView {
 		fatalError("Unsupported, use ini(client:)")
 	}
 	
-	private func setup() {
+	private func setup(with style: KernelDirectoryStyle) {
 		guard let contentView = contentView else { return }
 		
 		translatesAutoresizingMaskIntoConstraints = false
@@ -51,6 +51,8 @@ public class DirectoryFeaturedAppsView: UIView {
 		bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 		
 		contentView.infoButton.addTarget(self, action: #selector(infoAction), for: .touchUpInside)
+		
+		contentView.apply(style)
 	}
 	
 	private func combine() {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,13 +22,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Free Apps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpY-su-5QU">
-                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="389.5" height="30"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i50-hr-FcJ">
-                                    <rect key="frame" x="385.5" y="0.0" width="28.5" height="30"/>
+                                    <rect key="frame" x="389.5" y="0.0" width="24.5" height="30"/>
                                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                     <state key="normal" image="info.circle" catalog="system">
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
@@ -85,6 +85,7 @@
                 <outlet property="emptyStateContainer" destination="1qZ-bc-8eV" id="Nuc-cD-6rv"/>
                 <outlet property="emptyStateLabel" destination="pW2-s5-E8t" id="XrJ-KW-gmV"/>
                 <outlet property="infoButton" destination="i50-hr-FcJ" id="boU-V0-iCn"/>
+                <outlet property="titleLabel" destination="rpY-su-5QU" id="VCn-Ex-Z7m"/>
             </connections>
             <point key="canvasLocation" x="132" y="123"/>
         </view>
