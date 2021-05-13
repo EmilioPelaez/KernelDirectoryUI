@@ -16,6 +16,8 @@ public struct DirectoryFeaturedView: View {
 	let style: KernelDirectoryStyle
 	let viewAllAction: () -> Void
 	
+	public static let title = Text(Constant.moreFreeApps)
+	
 	public init(client: KernelClient, style: KernelDirectoryStyle = .default, viewAllAction: @escaping () -> Void) {
 		self.client = client
 		self.style = style
@@ -23,18 +25,15 @@ public struct DirectoryFeaturedView: View {
 	}
 	
 	public var body: some View {
-		VStack(spacing: 16) {
-			HStack {
-				Text(Constant.moreFreeApps)
-					.foregroundColor(style.primaryTextColor)
-				Spacer()
-				Button(action: { showInfo = true }) {
-					Image(systemName: "info.circle")
-						.padding(4)
+		VStack(spacing: 8) {
+			if style.showTitle {
+				HStack {
+					Text(Constant.moreFreeApps)
+						.foregroundColor(style.primaryTextColor)
+					Spacer()
 				}
-				.foregroundColor(style.accentColor)
+				.font(.headline)
 			}
-			.font(.headline)
 			switch featuredState {
 			case .loaded(let apps):
 				VStack(alignment: .leading) {
@@ -42,13 +41,23 @@ public struct DirectoryFeaturedView: View {
 						DirectoryRow(app: app, style: style)
 							.onTapGesture { openApp(app) }
 					}
-//					Button(action: viewAllAction) {
-//						Text(Constant.moreApps)
-//					}
 				}
 			case _:
 				emptyView(featuredState)
 			}
+			HStack {
+//				Button(action: viewAllAction) {
+//					Text(Constant.moreApps)
+//				}
+				Spacer()
+				Button(action: { showInfo = true }) {
+					Image(systemName: "info.circle")
+						.padding(4)
+				}
+			}
+			.buttonStyle(BorderlessButtonStyle())
+			.foregroundColor(style.accentColor)
+			.font(.callout)
 		}
 		.onAppear {
 			client.fetchFeatured()

@@ -6,6 +6,8 @@
 import SwiftUI
 
 public struct KernelDirectoryStyle {
+	let showTitle: Bool
+	
 	let primaryTextColor: Color
 	let secondaryTextColor: Color
 	
@@ -16,10 +18,19 @@ public struct KernelDirectoryStyle {
 	let rowBackgroundColor: Color
 	let downloadButtonBackgroundColor: Color
 	
-	public static let `default` = KernelDirectoryStyle(primaryTextColor: .primary,
-																							secondaryTextColor: .secondary,
-																							accentColor: .blue,
-																							iconPlaceholderColor: Color(.tertiarySystemBackground),
-																							rowBackgroundColor: Color(.secondarySystemBackground),
-																							downloadButtonBackgroundColor: Color(.tertiarySystemBackground))
+	public static let `default` = KernelDirectoryStyle(showTitle: true,
+																										 primaryTextColor: .primary,
+																										 secondaryTextColor: .secondary,
+																										 accentColor: .blue,
+																										 iconPlaceholderColor: Color(.tertiarySystemBackground),
+																										 rowBackgroundColor: Color(.secondarySystemBackground),
+																										 downloadButtonBackgroundColor: Color(.tertiarySystemBackground))
+	
+	public static let groupedList = KernelDirectoryStyle(showTitle: false,
+																												primaryTextColor: .primary,
+																												secondaryTextColor: .secondary,
+																												accentColor: .blue,
+																												iconPlaceholderColor: Color(.secondarySystemGroupedBackground),
+																												rowBackgroundColor: Color(.tertiarySystemGroupedBackground),
+																												downloadButtonBackgroundColor: Color(.secondarySystemGroupedBackground))
 }

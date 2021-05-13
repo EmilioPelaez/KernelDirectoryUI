@@ -13,11 +13,20 @@ struct ContentView: View {
 	@State var showFullList = false
 	
 	var body: some View {
-		DirectoryFeaturedView(client: client) { showFullList = true }
-			.padding()
-			.sheet(isPresented: $showFullList) {
-				DirectoryModalView(client: client)
+		VStack {
+			DirectoryFeaturedView(client: client, style: .default) { showFullList = true }
+				.padding()
+			List {
+				Section(header: DirectoryFeaturedView.title) {
+					DirectoryFeaturedView(client: client, style: .groupedList) { showFullList = true }
+						.padding(.vertical, 8)
+				}
 			}
+			.listStyle(InsetGroupedListStyle())
+		}
+		.sheet(isPresented: $showFullList) {
+			DirectoryModalView(client: client)
+		}
 	}
 }
 
