@@ -13,6 +13,7 @@ import UIKit
 public class DirectoryFeaturedAppsView: UIView {
 
 	let client: KernelClient
+	let style: KernelDirectoryStyle
 	weak var presentingController: UIViewController?
 	
 	var bag: Set<AnyCancellable> = []
@@ -24,6 +25,7 @@ public class DirectoryFeaturedAppsView: UIView {
 	
 	public init(client: KernelClient, style: KernelDirectoryStyle = .default, presentingController: UIViewController) {
 		self.client = client
+		self.style = style
 		self.presentingController = presentingController
 		
 		super.init(frame: .zero)
@@ -38,6 +40,11 @@ public class DirectoryFeaturedAppsView: UIView {
 		fatalError("Unsupported, use ini(client:)")
 	}
 	
+	public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+		super.traitCollectionDidChange(previousTraitCollection)
+		contentView?.apply(style)
+	}
+		
 	private func setup(with style: KernelDirectoryStyle) {
 		guard let contentView = contentView else { return }
 		

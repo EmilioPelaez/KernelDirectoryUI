@@ -14,13 +14,22 @@ class DirectoryFeaturedContentView: UIView {
 	@IBOutlet var appsContainer: UIStackView!
 	
 	@IBOutlet var titleLabel: UILabel!
-	@IBOutlet var infoButton: UIButton!
 	
 	@IBOutlet var emptyStateContainer: UIView!
 	@IBOutlet var emptyStateLabel: UILabel!
 	@IBOutlet var emptyStateButton: UIButton!
 	
+	@IBOutlet var moreAppsButton: UIButton!
+	@IBOutlet var infoButton: UIButton!
+	
 	var hostingControllers: [DirectoryRowViewController] = []
+	
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		
+		moreAppsButton.setTitle(Constant.moreApps, for: .normal)
+		moreAppsButton.isHidden = true
+	}
 	
 	func showApps(_ apps: [ApplicationInfo]) {
 		if appsContainer.isHidden {
@@ -60,10 +69,11 @@ class DirectoryFeaturedContentView: UIView {
 	
 	func apply(_ style: KernelDirectoryStyle) {
 		guard #available(iOS 14.0, *) else { return }
-		titleLabel.textColor = UIColor(style.primaryTextColor)
-		emptyStateLabel.textColor = UIColor(style.primaryTextColor)
-		emptyStateButton.setTitleColor(UIColor(style.accentColor), for: .normal)
-		infoButton.tintColor = UIColor(style.accentColor)
+		guard let colors = style.uiKitColors else { return }
+		titleLabel.textColor = colors.primaryTextColor
+		emptyStateLabel.textColor = colors.primaryTextColor
+		emptyStateButton.setTitleColor(colors.accentColor, for: .normal)
+		infoButton.tintColor = colors.accentColor
 	}
 	
 	@objc func tapAction(_ recognizer: UITapGestureRecognizer) {

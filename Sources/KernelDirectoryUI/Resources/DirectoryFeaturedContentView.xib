@@ -15,31 +15,16 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="06N-mZ-eoR">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="06N-mZ-eoR">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-CL-TN5">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Free Apps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpY-su-5QU">
-                                    <rect key="frame" x="0.0" y="0.0" width="389.5" height="30"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i50-hr-FcJ">
-                                    <rect key="frame" x="389.5" y="0.0" width="24.5" height="30"/>
-                                    <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
-                                    <state key="normal" image="info.circle" catalog="system">
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        </preferredSymbolConfiguration>
-                                    </state>
-                                </button>
-                            </subviews>
-                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Free Apps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpY-su-5QU">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="17"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qZ-bc-8eV">
-                            <rect key="frame" x="0.0" y="46" width="414" height="230"/>
+                            <rect key="frame" x="0.0" y="25" width="414" height="230"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kEk-Lw-Mpq">
                                     <rect key="frame" x="184" y="89.5" width="46" height="50.5"/>
@@ -65,7 +50,32 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YYP-b4-OJE">
-                            <rect key="frame" x="0.0" y="292" width="414" height="108"/>
+                            <rect key="frame" x="0.0" y="263" width="414" height="79"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-CL-TN5">
+                            <rect key="frame" x="0.0" y="350" width="414" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G32-w6-pKd">
+                                    <rect key="frame" x="0.0" y="0.0" width="41" height="50"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="4"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                                <view contentMode="scaleToFill" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="lno-Ob-PiP">
+                                    <rect key="frame" x="41" y="0.0" width="348.5" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i50-hr-FcJ">
+                                    <rect key="frame" x="389.5" y="0.0" width="24.5" height="50"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                    <state key="normal" image="info.circle" catalog="system">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        </preferredSymbolConfiguration>
+                                    </state>
+                                </button>
+                            </subviews>
                         </stackView>
                     </subviews>
                 </stackView>
@@ -85,6 +95,7 @@
                 <outlet property="emptyStateContainer" destination="1qZ-bc-8eV" id="Nuc-cD-6rv"/>
                 <outlet property="emptyStateLabel" destination="pW2-s5-E8t" id="XrJ-KW-gmV"/>
                 <outlet property="infoButton" destination="i50-hr-FcJ" id="boU-V0-iCn"/>
+                <outlet property="moreAppsButton" destination="G32-w6-pKd" id="Tkn-mg-KLU"/>
                 <outlet property="titleLabel" destination="rpY-su-5QU" id="VCn-Ex-Z7m"/>
             </connections>
             <point key="canvasLocation" x="132" y="123"/>

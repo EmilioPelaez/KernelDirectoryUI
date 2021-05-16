@@ -18,13 +18,17 @@ public struct KernelDirectoryStyle {
 	let rowBackgroundColor: Color
 	let downloadButtonBackgroundColor: Color
 	
+	//	Required when customizing the style of the UIKit classes
+	let uiKitColors: UIKitColors?
+	
 	public static let `default` = KernelDirectoryStyle(showTitle: true,
 																										 primaryTextColor: .primary,
 																										 secondaryTextColor: .secondary,
 																										 accentColor: .blue,
 																										 iconPlaceholderColor: Color(.tertiarySystemBackground),
 																										 rowBackgroundColor: Color(.secondarySystemBackground),
-																										 downloadButtonBackgroundColor: Color(.tertiarySystemBackground))
+																										 downloadButtonBackgroundColor: Color(.tertiarySystemBackground),
+																										 uiKitColors: .default)
 	
 	public static let groupedList = KernelDirectoryStyle(showTitle: false,
 																												primaryTextColor: .primary,
@@ -32,5 +36,21 @@ public struct KernelDirectoryStyle {
 																												accentColor: .blue,
 																												iconPlaceholderColor: Color(.secondarySystemGroupedBackground),
 																												rowBackgroundColor: Color(.tertiarySystemGroupedBackground),
-																												downloadButtonBackgroundColor: Color(.secondarySystemGroupedBackground))
+																												downloadButtonBackgroundColor: Color(.secondarySystemGroupedBackground),
+																												uiKitColors: .groupedList)
+	
+	public struct UIKitColors {
+		let primaryTextColor: UIColor
+		let secondaryTextColor: UIColor
+		
+		let accentColor: UIColor
+		
+		public static let `default` = UIKitColors(primaryTextColor: .label,
+																							secondaryTextColor: .secondaryLabel,
+																							accentColor: .systemBlue)
+		
+		public static let groupedList = UIKitColors(primaryTextColor: .label,
+																								secondaryTextColor: .secondaryLabel,
+																								accentColor: .systemBlue)
+	}
 }
